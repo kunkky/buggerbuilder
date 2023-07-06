@@ -12,7 +12,7 @@ const BuilderControls = ({ingredients, addIngredient, removeIngredient}) => {
         
       ))}
     </div>
-  )
+  ) //npm install prop types 
 }
 
 export default BuilderControls

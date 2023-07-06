@@ -6,14 +6,13 @@ import BuilderControls from '../Components/BuilderControls'
 const BuggerBuilder = () => {
     const ingredients =["chees", 'meat', 'another', 'fish'];
     const [ingredientBoard, setIngredientBoard] = useState([])
-    const Current=[];
+    
     //make clickable functions 
     const addIngredient = (index) => {   
         const selected = ingredients[index] ; 
-        //setIngredientBoard(Current.push(selected)) [
      
-        setIngredientBoard([...ingredientBoard, Current.push(selected)])
-        console.log(selected +' is to be added');       
+        setIngredientBoard([...ingredientBoard, ingredientBoard.push(selected)])
+     console.log(selected);
     }
     const removeIngredient = (index) => {
         const selected = ingredients[index];
