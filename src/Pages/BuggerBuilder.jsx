@@ -4,24 +4,30 @@ import BuilderControls from '../Components/BuilderControls'
 
 
 const BuggerBuilder = () => {
-    const ingredients =["chees", 'meat', 'another', 'fish'];
+  const ingredients = ["cheese", 'meat', 'onions', 'tomato' ,'lettuce'];
     const [ingredientBoard, setIngredientBoard] = useState([])
     
     //make clickable functions 
-    const addIngredient = (index) => {   
-        const selected = ingredients[index] ; 
-     
-        setIngredientBoard([...ingredientBoard, ingredientBoard.push(selected)])
-     console.log(selected);
+  const addIngredient = (index) => {   
+    const newIng = ingredients[index];
+      const OldIng = [...ingredientBoard];
+      OldIng.push(newIng)
+      setIngredientBoard(OldIng)
     }
-    const removeIngredient = (index) => {
-        const selected = ingredients[index];
-        console.log(selected + ' is to be removed');
-    }
-    console.log(ingredientBoard);
+  const removeIngredient = (item) => {
+     const OldIng = [...ingredientBoard];
+     //get last index of the last added item, 
+    const LastAddedItemIndex = OldIng.lastIndexOf(item);
+      //and then slice it off the array if what was click was ever added
+        if(LastAddedItemIndex>-1){
+      OldIng.splice(LastAddedItemIndex, 1)
+      //setstate of your ingredient
+        setIngredientBoard(OldIng)
+        }
+      }
   return (
     <div className='flex flex-col justify-center items-center h-screen'>
-        <Bugger />
+      <Bugger ingredients={ingredientBoard}/>
           <BuilderControls ingredients={ingredients} addIngredient={addIngredient} removeIngredient={removeIngredient} />
     </div>
   )

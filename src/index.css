@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.meat{
+background-color: brown;
+}
+.onions{
+background-color:#6AA121;
+}
+.cheese{
+background-color: #ffe8be;
+}
+.tomato{
+background-color: #FF6347;
+}
+.lettuce{
+background-color: green;
+}

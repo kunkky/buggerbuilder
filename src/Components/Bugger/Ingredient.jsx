@@ -1,8 +1,16 @@
 import React from 'react'
 
-const Ingredient = () => {
+const Ingredient = ({ ingredients }) => {
+
   return (
-    <div>Please add Ingredients</div>
+    <div className='flex flex-col w-full'>
+      {ingredients.length >= 1 ? <div>
+        {ingredients.map((ingredient, index) => (          
+           <div className={`w-full h-10 rounded-2xl bg-black my-2 ${ingredient} text-center flex justify-center items-center text-yellow-50`} key={index}>{ingredient}</div>)
+        )}
+      </div> : <div className='text-center'>Please add Ingredients</div>}
+    </div>
+
   )
 }
 

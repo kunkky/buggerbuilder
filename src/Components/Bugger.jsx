@@ -3,11 +3,11 @@ import Top from './Bugger/Top'
 import Ingredient from './Bugger/Ingredient'
 import Buttom from './Bugger/Buttom'
 
-const Bugger = () => {
+const Bugger = ({ ingredients }) => {
   return (
-  <div>
-    <Top/>
-    <Ingredient/>
+  <div className='h-[70%] flex justify-center items-center flex-col overflow-auto'>
+      <Top/>
+       <Ingredient ingredients={ingredients}/> 
     <Buttom/>
   </div>
   )
